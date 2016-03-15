@@ -1,0 +1,25 @@
+{
+  "name": "flexbox-library",
+  "version": "1.0.0",
+  "description": "A Sass library of flexbox mixins and handy tools.",
+  "main": "Gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dallaskoncir/flexbox-library.git"
+  },
+  "keywords": [
+    "flexbox",
+    "sass",
+    "mixins",
+    "library"
+  ],
+  "author": "Dallas Koncir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dallaskoncir/flexbox-library/issues"
+  },
+  "homepage": "https://github.com/dallaskoncir/flexbox-library#readme"
+}
