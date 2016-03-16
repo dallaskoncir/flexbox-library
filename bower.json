@@ -1,0 +1,23 @@
+{
+  "name": "flexbox-library",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dallaskoncir/flexbox-library",
+  "authors": [
+    "Dallas Koncir <me@dallaskoncir.com>"
+  ],
+  "description": "A Sass library of flexbox mixins and handy tools.",
+  "main": "Gulpfile.js",
+  "keywords": [
+    "Flexbox",
+    "mixins",
+    "library"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
