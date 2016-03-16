@@ -1,0 +1,10 @@
+// Import partials
+@import 'variables';
+@import 'mixins';
+@import 'normalize';
+
+.item {
+  width: 100px;
+  height: 100px;
+  background: steelblue;
+}
