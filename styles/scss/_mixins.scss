@@ -1,0 +1,43 @@
+// mixins for FLEXBOX PARENTS
+
+// @include flexbox on parent element
+@mixin flexbox() {
+  display: table-cell;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+
+// values for flexbox parent element
+@mixin flexbox-parent($direction, $wrap, $justify, $align-items, $align-content) {
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $justify;
+  align-items: $align-items;
+  align-content: $align-content;
+}
+
+// mixins for FLEXBOX CHILDREN
+
+// mixin for setting the order of flexbox child elements
+// accepts integer values
+// only need to use this if changing order of item from source order
+@mixin order($value) {
+  order: $value;
+}
+
+// mixin for shorthand flex property 
+// example (and default if no values entered): 0 1 auto
+// flex-grow | flex-shrink | flex-basis
+@mixin flex($values) {
+  flex: $values;
+}
+
+// mixin for the align-self property
+// available values are: auto | flex-start | flex-end | center | baseline | stretch
+// default is stretch
+@mixin align-self($self) {
+  align-self: $self;
+}
