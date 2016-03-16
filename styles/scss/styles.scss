@@ -2,6 +2,7 @@
 @import 'variables';
 @import 'mixins';
 @import 'normalize';
+@import '../../bower_components/include-media/dist/include-media';
 
 html {
   font-size: 16px;
@@ -18,6 +19,9 @@ h1 {
   letter-spacing: -1px;
   font-weight: 700;
   margin-bottom: 2rem;
+  @include media('>=tablet') {
+    font-size: 2.5rem;
+  }
 }
 
 .wrapper {
@@ -26,11 +30,23 @@ h1 {
   padding: 0 1rem;
   @include flexbox;
   @include flexbox-parent(column, wrap, space-between, stretch, flex-start);
+  @include media('>=tablet') {
+    @include flexbox-parent(row, wrap, space-between, flex-start, stretch);
+  }
 }
 
 .item {
+  width: 100%;
   height: 100px;
   background: steelblue;
   margin-bottom: 1rem;
   @include flex(0 1 auto);
+  @include media('>=tablet') {
+    width: 50%;
+    @include flex(0 1 49%);
+  }
+  @include media('>=desktop') {
+    width: 33%;
+    @include flex(0 1 32%);
+  }
 }
