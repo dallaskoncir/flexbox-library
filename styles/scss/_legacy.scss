@@ -1,0 +1,42 @@
+// Fallbacks for those older, less awesome browsers
+
+// This code works as far back as IE9
+
+// Wouldn't be all that hard to support IE8, you would likely need to add classes instead of using the nth-child selector
+
+html.no-flexbox,
+html.no-flexboxlegacy {
+  // change h1 font units to px when rems aren't supported
+  h1 {
+    font-size: 32px;
+    margin-bottom: 32px;
+    @include media('>=tablet') {
+      font-size: 40px;
+    }
+  }
+  // set wrapper to it's usual display:block
+  .wrapper {
+    display: block;
+  }
+  // float items to achieve the same results as flexbox, minus the ordering ability
+  .item {
+    float: left;
+    @include media('>=tablet') {
+      width: 49%;
+      margin-right: 2%;
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+    @include media('>=desktop') {
+      width: 32%;
+      margin-right: 1.6666%;
+      &:nth-child(2n) {
+        margin-right: 1.6666%;
+      }
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+  }
+}

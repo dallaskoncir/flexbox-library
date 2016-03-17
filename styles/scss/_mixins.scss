@@ -1,17 +1,13 @@
-// mixins for FLEXBOX PARENTS
+// The mixins
 
-// @include flexbox on parent element
-@mixin flexbox() {
-  display: table-cell;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-}
+// mixin for FLEXBOX PARENTS
+
+// I had a mixin for setting the display to flex but with autoprefixer it seemed redundant. Just be sure to set the flexbox parent element to display:flex.
 
 // values for flexbox parent element
-@mixin flexbox-parent($direction, $wrap, $justify, $align-items, $align-content) {
+// example usage @include flexbox-parent($direction:column,$justify:space-between);
+// in the example, values are only set for flex-direction and justify-content, the rest of the properties will inherit the default values
+@mixin flexbox-parent($direction:row, $wrap:nowrap, $justify:flex-start, $align-items:stretch, $align-content:stretch) {
   flex-direction: $direction;
   flex-wrap: $wrap;
   justify-content: $justify;
@@ -23,21 +19,21 @@
 
 // mixin for setting the order of flexbox child elements
 // accepts integer values
-// only need to use this if changing order of item from source order
+// only need to use this if changing order of item from source order so no default value is necessary
 @mixin order($value) {
   order: $value;
 }
 
 // mixin for shorthand flex property 
 // example (and default if no values entered): 0 1 auto
-// flex-grow | flex-shrink | flex-basis
-@mixin flex($values) {
+// shorthand for flex-grow | flex-shrink | flex-basis
+@mixin flex($values:0 1 auto) {
   flex: $values;
 }
 
 // mixin for the align-self property
 // available values are: auto | flex-start | flex-end | center | baseline | stretch
 // default is stretch
-@mixin align-self($self) {
+@mixin align-self($self:stretch) {
   align-self: $self;
 }
