@@ -24,8 +24,10 @@ gulp.task('watch', function() {
 
 // Start the server
 gulp.task('browser-sync', function() {
-  browserSync({
-    proxy: "flexbox-library.local"
+  browserSync.init({
+    server: {
+      baseDir: "./"
+    }
   });
 });
 
