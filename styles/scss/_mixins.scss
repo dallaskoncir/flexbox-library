@@ -8,6 +8,7 @@
 // example usage @include flexbox-parent($direction:column,$justify:space-between);
 // in the example, values are only set for flex-direction and justify-content, the rest of the properties will inherit the default values
 @mixin flexbox-parent($direction:row, $wrap:nowrap, $justify:flex-start, $align-items:stretch, $align-content:stretch) {
+  display: flex;
   flex-direction: $direction;
   flex-wrap: $wrap;
   justify-content: $justify;
