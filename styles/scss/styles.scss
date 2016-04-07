@@ -35,10 +35,9 @@ img {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
-  display: flex;
-  @include flexbox-parent($direction:column, $justify:$daveMatthews);
+  @include flexbox-parent($direction:column);
   @include media('>=tablet') {
-    @include flexbox-parent($wrap:wrap, $justify:$daveMatthews, $align-items:flex-start);
+    @include flexbox-parent($direction:row, $wrap:wrap);
   }
 }
 
@@ -48,7 +47,6 @@ img {
   background: $boxBg;
   margin: auto; // makes the last row work in Safari and Firefox
   margin-bottom: 1rem;
-  @include flex();
   @include media('>=tablet') {
     width: 49%;
     @include flex(0 1 48%);
