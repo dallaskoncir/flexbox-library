@@ -14,7 +14,6 @@ gulp.task('styles', function() {
     .pipe(p.sourcemaps.init())
     .pipe(p.sass())
     .pipe(p.autoprefixer())
-    .pipe(p.cleanCss())
     .pipe(p.sourcemaps.write('./'))
     .pipe(gulp.dest('./styles/'))
     .pipe(reload({ stream:true }))
