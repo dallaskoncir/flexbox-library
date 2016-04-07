@@ -9,6 +9,8 @@ var reload = browserSync.reload;
 
 gulp.task('styles', function() {
   gulp.src('./styles/scss/styles.scss')
+    // Using a custom plumber task for error reporting
+    .pipe(customPlumber('Error Running Sass'))
     .pipe(p.sourcemaps.init())
     .pipe(p.sass())
     .pipe(p.autoprefixer())
@@ -17,6 +19,17 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('./styles/'))
     .pipe(reload({ stream:true }))
 });
+
+function customPlumber(errTitle) {
+  return p.plumber({
+    errorHandler: p.notify.onError({
+      // Customizing error title
+      title: errTitle || "Error Running Gulp",
+      message: "Error: <%= error.message %>",
+      sound: "Glass"
+    })
+  });
+}
 
 gulp.task('watch', function() {
   gulp.watch('./styles/scss/*.scss', ['styles']);

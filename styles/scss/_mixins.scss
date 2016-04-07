@@ -2,8 +2,7 @@
 
 // mixin for FLEXBOX PARENTS
 
-// I had a mixin for setting the display to flex but with autoprefixer it seemed redundant. Just be sure to set the flexbox parent element to display:flex.
-
+// sets parent element to display: flex and adds defaults which can be updated
 // values for flexbox parent element
 // example usage @include flexbox-parent($direction:column,$justify:space-between);
 // in the example, values are only set for flex-direction and justify-content, the rest of the properties will inherit the default values
