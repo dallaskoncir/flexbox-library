@@ -1,5 +1,12 @@
 // The mixins
 
+// UPDATE - I have updated the mixins to not compile the default values when they are not needed.
+
+// base FLEXBOX mixin - sets parent element to display:flex to enable flexbox
+@mixin flexbox() {
+  display: flex;
+}
+
 // mixin for FLEXBOX PARENTS
 
 // sets parent element to display: flex and adds defaults which can be updated
@@ -7,7 +14,6 @@
 // example usage @include flexbox-parent($direction:column,$justify:space-between);
 // in the example, values are only set for flex-direction and justify-content, the rest of the properties will inherit the default values
 @mixin flexbox-parent($direction:null, $wrap:null, $justify:null, $align-items:null, $align-content:null) {
-  display: flex;
   @if $direction {
     flex-direction: $direction;
   }
